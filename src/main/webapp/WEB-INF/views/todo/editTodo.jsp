@@ -4,6 +4,12 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <!DOCTYPE html>
 <html>
+	<script>
+        $('#targetDatae').datepicker({
+            format: 'dd/mm/yyyy'
+        });
+    </script>
+
 <head>
 <meta charset="ISO-8859-1">
 <title>Add From Book</title>
@@ -21,6 +27,10 @@
 		<p>
 			<label for="description">Description:</label>
 			<form:input id="description" path="description" />
+		</p>
+		<p>
+			<form:label path="targetDatae">Target Date</form:label>
+			<form:input path="targetDatae" type="text" />
 		</p>
 		<p>
 			<label for="startMeter">Star Meter</label>

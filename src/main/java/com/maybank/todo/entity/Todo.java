@@ -10,6 +10,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -34,6 +36,7 @@ public class Todo implements Serializable {
 	@Column(nullable = true)
 	private String description;
 
+	@DateTimeFormat(pattern = "dd/mm/yyyy")
 	@Column(nullable = true)
 	private Date targetDatae;
 

@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.maybank.todo.entity.Todo;
 import com.maybank.todo.service.TodoService;
@@ -49,6 +50,7 @@ public class TodoController {
 
 	@RequestMapping("/save")
 	public String save(@ModelAttribute Todo todo) {
+		System.out.println(todo);
 		todoService.saveTodo(todo);
 		return "redirect:";
 	}
@@ -67,5 +69,11 @@ public class TodoController {
 		todoService.updateTodo(todo);
 		return "redirect:";
 	}
+	
+	@RequestMapping("delete")
+    public String deleteTodo(@RequestParam int id) {
+        todoService.deleteTodo(id);
+        return "redirect:";
+    }
 
 }

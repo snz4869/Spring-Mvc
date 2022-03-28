@@ -4,6 +4,7 @@
 
 <!doctype html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8" />
 	<title>Document</title>
@@ -26,7 +27,10 @@
 		<td> ${ todo.description } </td>
 		<td> ${ todo.targetDatae } </td>
 		<td> ${ todo.startMeter } </td>
-		<td><a href="edit/${todo.id}">Edit</a></td>
+		<td>
+			<a type="button" href="edit/${todo.id}">Update</a>
+			<a type="button" href="delete?id=${todo.id}" onclick="return confirm('Are you sure you want to delete this item?');" >Delete</a>
+		</td>
 	</tr>
 	</c:forEach>
 </table>
