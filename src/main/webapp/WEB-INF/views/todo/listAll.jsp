@@ -9,6 +9,7 @@
 	<title>Document</title>
 </head>
 <body>
+<a href='<c:url value="input"/>'>Add Book</a>
 <table>
 	<tr>
 		<th>ID</th>

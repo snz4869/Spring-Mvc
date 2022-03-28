@@ -1,6 +1,8 @@
 package com.maybank.todo.entity;
 
+import java.io.Serializable;
 import java.time.LocalDate;
+import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -18,20 +20,24 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class Todo {
+public class Todo implements Serializable {
+	
+	private static final long serialVersionUID = 1L;
+	
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 
 	@Column(nullable = false)
 	private String user;
 
-	@Column(nullable = false)
+	@Column(nullable = true)
 	private String description;
 
-	@Column(nullable = false)
-	private LocalDate targetDatae;
+	@Column(nullable = true)
+	private Date targetDatae;
 
 	private int startMeter;	
+		
 			
 }
