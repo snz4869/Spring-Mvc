@@ -11,8 +11,8 @@
 <body>
 <table>
 	<tr>
-		<th>No</th>
-		<th>User</th>
+		<th>ID</th>
+		<th>Username</th>
 		<th>Description</th>
 		<th>Target Date</th>
 		<th>Start Meter</th>
