@@ -19,6 +19,8 @@ public interface TodoService {
 	void deleteTodo(int id);
 
 	void saveTodo(Todo todo);
+	
+	Optional < Todo > get(int id);
 
 	long getNextId();
 }

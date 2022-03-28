@@ -26,7 +26,7 @@
 		<td> ${ todo.description } </td>
 		<td> ${ todo.targetDatae } </td>
 		<td> ${ todo.startMeter } </td>
-		<td> &nbsp;</td>
+		<td><a href="edit/${todo.id}">Edit</a></td>
 	</tr>
 	</c:forEach>
 </table>
