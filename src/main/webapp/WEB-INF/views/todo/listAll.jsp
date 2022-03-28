@@ -11,7 +11,7 @@
 <body>
 <table>
 	<tr>
-		<th>ID 2</th>
+		<th>ID</th>
 		<th>User</th>
 		<th>Description</th>
 		<th>Target Date</th>
