@@ -12,7 +12,7 @@
 <table>
 	<tr>
 		<th>ID</th>
-		<th>Username</th>
+		<th>User</th>
 		<th>Description</th>
 		<th>Target Date</th>
 		<th>Start Meter</th>
