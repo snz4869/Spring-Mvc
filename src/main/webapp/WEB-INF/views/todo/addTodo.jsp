@@ -4,42 +4,62 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <!DOCTYPE html>
 <html>
-    <script>
-        $('#targetDatae').datepicker({
+    <script src="/webjars/jquery/1.9.1/jquery.min.js"></script>
+    <script src="/webjars/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="/webjars/bootstrap-datepicker/1.0.1/js/bootstrap-datepicker.js"></script>
+    
+    <script>  
+        $(function() {  
+            $( "#targetDatae" ).datepicker();  
             format: 'dd/mm/yyyy'
-        });
-    </script>
+        });  
+    </script>  
 
+<link href="/webjars/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
 <head>
 <meta charset="ISO-8859-1">
-<title>Add From Book</title>
+<title>Add From Todo</title>
 </head>
 <body>
-	<h1>Book Add From</h1>
-	<form:form action="save" method="post" modelAttribute="todo">
-		<fildset> <legend>Add a Todo</legend>		
-            <p>
-                <label for="user">User:</label>
-                <form:input id="user" path="user" />
-            </p>
-            <p>
-                <label for="description">Description:</label>
-                <form:input id="description" path="description" />
-            </p>
-            <p>
-                <form:label path="targetDatae">Target Date</form:label>
-                <form:input path="targetDatae" type="text" />
-            </p>
-            <p>
-                <label for="startMeter">Star Meter</label>
-                <form:input id="startMeter" path="startMeter" />
-            </p>
-            
-            <p id="id">
-                <input type="reset" id="reset" value="Reset" /> <input type="submit" id="submit" value="Submit"
-                    path="Add book" />
-            </p>
-		</fildset>
-		</form:form>
+    <%@ include file="common/nav.jspf"%>
+	<div class="container">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3 ">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">Add TODO</div>
+                    <div class="panel-body">
+                        <form:form action="save" method="post" modelAttribute="todo">
+
+                            <fieldset class="form-group">	
+                                <form:label path="user">User</form:label>
+                                <form:input id="user" path="user" class="form-control" required="required" />
+                                <form:errors path="user" cssClass="text-warning" />
+                            </fieldset>                                
+
+                            <fieldset class="form-group">
+                                <form:label path="description">Description</form:label>
+                                <form:input id="description" path="description" class="form-control" required="required" />
+                                <form:errors path="description" cssClass="text-warning" />
+                            </fieldset>
+                            
+                            <fieldset class="form-group">
+                                <form:label path="targetDatae">Target Date</form:label>
+                                <form:input path="targetDatae" type="text" class="form-control" placeholder="dd/mm/yyyy" />
+                                <form:errors path="targetDatae" cssClass="text-warning" />
+                            </fieldset>
+
+                            <fieldset class="form-group">
+                                <form:label path="startMeter">star Meter</form:label>
+                                <form:input id="startMeter" type="number" path="startMeter" class="form-control" />
+                            </fieldset>
+                            
+                                <input type="reset" id="reset" value="Reset" class="btn btn-warning" />                                 
+                                <button type="submit" class="btn btn-success">Save</button>                                                           
+                        </form:form>
+                   </div>
+                </div>
+            </div>
+        </div>  
+    </div> 
 </body>
 </html>

@@ -23,7 +23,7 @@ import lombok.extern.java.Log;
 
 @Controller
 @Log
-@RequestMapping("/todo")
+@RequestMapping("")
 public class TodoController {
 	@Autowired
 	TodoService todoService;
