@@ -5,10 +5,15 @@ import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
+import org.springframework.data.jpa.repository.Query;
+
 import com.maybank.todo.entity.Todo;
 
 public interface TodoService {
+	
 	List<Todo> listAll();
+		
+	List<Todo> findByUser(String keyword);
 
 	Optional<Todo> getTodoById(int id);
 

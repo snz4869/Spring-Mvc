@@ -11,7 +11,7 @@ import com.maybank.todo.entity.Todo;
 import com.maybank.todo.entity.TodoRepository;
 
 @Service
-public class TodoServiceImpl implements TodoService {	
+public class TodoServiceImpl implements TodoService {
 
 	@Autowired
 	TodoRepository repo;
@@ -66,5 +66,11 @@ public class TodoServiceImpl implements TodoService {
 		// TODO Auto-generated method stub
 		return repo.findById(id);
 	}
-	
+
+	@Override
+	public List<Todo> findByUser(String keyword) {
+		// TODO Auto-generated method stub
+		return repo.findByUserContains(keyword);
+	}
+
 }

@@ -16,6 +16,12 @@
 		</div>
 		<div class="panel panel-primary">	
 			<div class="panel-body">
+
+				<form:form action="search" method="post" modelAttribute="searchForm">					
+					<form:input id="keyword" path="keyword" class="form-control m-2" required="required" />
+					<button class="btn btn-outline-success" type="submit">Search</button>
+				</form:form>				
+				
 			<table class="table table-striped">
 				<thead>
 				<tr>
